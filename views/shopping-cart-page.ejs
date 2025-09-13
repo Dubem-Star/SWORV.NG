@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link href="images/sworv-logo.png" type="image/png" rel="icon" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+
+  <body class="sc-page" id="shoppingCartPage">
+    <%- include("partials/navbar") %>
+    <div class="sc-heading">
+      <img src="images/sworv-logo.png" alt="logo" class="sc-page-logo-img" />
+      <h5 id="cartPageheader">YOUR CART</h5>
+    </div>
+
+    <main class="main-page container" id="scMainPage"></main>
+
+    <div class="total-container container" id="totalContainer">
+      <div class="keep-shopping-container">
+        <a href="/shopPage" class="keep-shopping-btn fw-bold">
+          KEEP SHOPPING
+        </a>
+      </div>
+
+      <p class="fw-bold subtotal-texts">
+        SUBTOTAL: <span class="actual-subtotal fw-bold" id="subTotal"></span>
+      </p>
+    </div>
+
+    <div class="checkout-container" id="checkoutContainer">
+      <a href="#" class="checkout-btn fw-bold" id="checkoutBtn">CHECKOUT</a>
+    </div>
+
+    <%- include("partials/footer") %>
+    <script src="include.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

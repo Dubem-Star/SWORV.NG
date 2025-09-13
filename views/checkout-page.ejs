@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link href="images/sworv-logo.png" type="image/png" rel="icon" />
+    <link rel="stylesheet" href="homePage-coPage.css" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body id="checkoutPage" class="checkout-page">
+    <nav class="custom-navbar">
+      <a href="/shopPage" class="logo-cont">
+        <img
+          src="images/sworv-logo.png"
+          alt="logo"
+          class="checkout-page-nav-logo"
+        />
+      </a>
+
+      <div class="cart-icon cart-icon-co-pg">
+        <a href="/cart" class="text-decoration-none">
+          <i
+            class="bi bi-cart shop-cart-icon text-light d-flex align-items-center"
+          ></i>
+        </a>
+
+        <span class="bagde" id="bagdeCount">0</span>
+      </div>
+    </nav>
+
+    <!-- MAIN PAGE MAIN PAGE MAIN PAGE MAIN PAGE MAIN PAGE MAIN PAGE MAIN PAGE MAIN PAGE -->
+    <!-- MAIN PAGE MAIN PAGE MAIN PAGE MAIN PAGE MAIN PAGE MAIN PAGE MAIN PAGE MAIN PAGE -->
+
+    <div class="overrall-cont">
+      <main class="checkout-content">
+        <!-- SHIPPING FORM SHIPPING FORM SHIPPING FORM SHIPPING FORM SHIPPING FORM SHIPPING FORM SHIPPING FORM SHIPPING FORM -->
+        <!-- SHIPPING FORM SHIPPING FORM SHIPPING FORM SHIPPING FORM SHIPPING FORM SHIPPING FORM SHIPPING FORM SHIPPING FORM -->
+        <div class="user-form">
+          <form
+            action="#"
+            id="shippingAddressForm"
+            class="form-control container checkout-form"
+          >
+            <div class="form-column">
+              <label class="bold-labels" for="emailContact">Contact</label>
+              <input
+                type="email"
+                class="form-control"
+                id="emailContact"
+                placeholder="Email:"
+                name="email"
+                required
+              />
+            </div>
+
+            <div class="form-column form-floating">
+              <select
+                name="country"
+                class="form-select"
+                id="region"
+                aria-label="Country/Region:"
+                required
+              >
+                <option value="">--select country--</option>
+
+                <option value="unitedStates">United States</option>
+                <option value="canada">Canada</option>
+                <option value="southAfrica">South Africa</option>
+                <option value="nigeria">Nigeria</option>
+                <option value="india">India</option>
+                <option value="australia">Australia</option>
+                <option value="germany">Germany</option>
+              </select>
+              <label for="region">Country/Region:</label>
+            </div>
+
+            <div class="flex-row-container">
+              <input
+                type="text"
+                class="form-control"
+                name="firstname"
+                placeholder="First name:"
+                required
+              />
+              <input
+                type="text"
+                class="form-control"
+                name="lastname"
+                placeholder="Last name:"
+                required
+              />
+            </div>
+
+            <input
+              type="text"
+              class="form-control"
+              name="address"
+              placeholder="Delivery Address:"
+              required
+            />
+
+            <div class="location-container">
+              <input
+                type="text"
+                name="city"
+                placeholder="City:"
+                class="form-control"
+                required
+              />
+              <div class="form-floating state-selection">
+                <select
+                  name="state"
+                  id="state"
+                  class="form-select"
+                  aria-label="State"
+                  id="state"
+                  required
+                >
+                  <option value="" class="state-placeholder">
+                    --select state--
+                  </option>
+                  ;
+                </select>
+                <label for="state">State</label>
+              </div>
+
+              <input
+                type="number"
+                class="form-control"
+                name="zip-code"
+                placeholder="ZIP code (optional)"
+                required
+              />
+            </div>
+
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Phone "
+              name="phonenumber"
+              required
+            />
+
+            <!-- PAYMENT SECTION PAYMENT SECTION PAYMENT SECTION PAYMENT SECTION -->
+            <!-- PAYMENT SECTION PAYMENT SECTION PAYMENT SECTION PAYMENT SECTION -->
+
+            <div class="payment-section">
+              <label class="bold-labels">Payment</label>
+              <p class="under-payment">
+                All transactions are secure and encrypted
+              </p>
+
+              <div class="card-details-container">
+                <div class="credit-card">
+                  <span class="pstxt">PayStack</span>
+
+                  <div class="payment-icons">
+                    <img src="images/paystackicon (1).jpg" alt="visa" />
+                    <img src="images/visaicon.png" alt="visa" />
+                    <img src="images/mastercardicon.png" alt="mastercard" />
+                    <img src="images/americanexpicon.png" alt="americanexp" />
+                  </div>
+                </div>
+
+                <!-- CARD DETAILS -->
+                <div class="card-details">
+                  <div class="payment-message">
+                    <p>
+                      After Clicking "Pay Now" you will be redirected to
+                      Paystack to complete your purchase securely.
+                    </p>
+                  </div>
+
+                  <div class="billing-address-checkbox ps-1">
+                    <!-- BANK TRANSFER AREA BANK TRANSFER AREA  BANK TRANSFER AREA BANK TRANSFER AREA  BANK TRANSFER AREA
+                   BANK TRANSFER AREA BANK TRANSFER AREA  BANK TRANSFER AREA BANK TRANSFER AREA  BANK TRANSFER AREA -->
+
+                    <div class="mode-of-payment-container">
+                      <div id="bankTransferBox" class="form-check mop-box">
+                        <input
+                          id="bankTransferInput"
+                          type="checkbox"
+                          class="form-check-input"
+                        />
+                        <label
+                          for="bankTransferInput"
+                          class="form-check-label moptxt"
+                        >
+                          Mode of Payment</label
+                        >
+                      </div>
+
+                      <!-- MODE OF PAYMENTS -->
+
+                      <div
+                        class="description-container hidden"
+                        id="descriptionContainer"
+                      >
+                        <div
+                          id="creditCardMode"
+                          class="form-check mop-box direct"
+                        >
+                          <input
+                            id="creditCardCheckbox"
+                            type="checkbox"
+                            class="form-check-input"
+                          />
+                          <label
+                            for="creditCardCheckbox"
+                            class="form-check-label"
+                          >
+                            Credit Card</label
+                          >
+                        </div>
+
+                        <div
+                          id="bankTransferMode"
+                          class="form-check mop-box direct"
+                        >
+                          <input
+                            id="bankTransferCheckbox"
+                            type="checkbox"
+                            class="form-check-input"
+                          />
+                          <label
+                            for="bankTransferCheckbox"
+                            class="form-check-label"
+                          >
+                            Bank Transfer</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PAY NOW PAY NOW  PAY NOW  PAY NOW  PAY NOW   PAY NOW  PAY NOW  PAY NOW  PAY NOW  -->
+              <div class="pay-btn-container">
+                <button type="submit" class="pay-btn">Pay Now</button>
+              </div>
+
+              <hr />
+              <div class="copyright-co-page">
+                <span>All rights reserved SWORV.NG</span>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS -->
+        <!-- PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS PRODUCT DETAILS -->
+
+        <div class="product-details container">
+          <div class="order-summary"><h4>Order Summary</h4></div>
+
+          <div class="product-box container" id="productBox"></div>
+
+          <div class="subtotal-container container">
+            <div>
+              <p>Subtotal <span class="qtyAgain"></span></p>
+              <p class="price" id="totalPrice"></p>
+            </div>
+
+            <div>
+              <p>Shipping</p>
+              <p class="price" id="shippingPrice">₦4000</p>
+            </div>
+
+            <div>
+              <p class="total"><strong>Total</strong></p>
+              <p class="full-total-price" id="fullTotalPrice"></p>
+            </div>
+          </div>
+
+          <div class="pay-btn-container">
+            <button id="mobilePayBtn" class="pay-btn">Pay Now</button>
+          </div>
+
+          <hr />
+          <div class="copyright-co-page">
+            <span>All rights reserved SWORV.NG</span>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="include.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
