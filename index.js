@@ -13,8 +13,7 @@ const mongoose = require("mongoose");
 const crypto = require("crypto");
 require("dotenv").config();
 
-const testKey = "sk_test_4ba20355aa10ed084d811a1bf19572ac7e8a3373";
-const paystack = new Paystack(testKey);
+const paystack = new Paystack(process.env.PAYSTACK_LIVE_SECRET_KEY);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -119,7 +118,7 @@ app.post("/initialize-payment", async (req, res) => {
       paystackPayload,
       {
         headers: {
-          Authorization: `Bearer ${testKey}`,
+          Authorization: `Bearer ${process.env.PAYSTACK_LIVE_SECRET_KEY}`,
           "Content-Type": "application/json",
         },
       }
@@ -155,7 +154,7 @@ app.post("/initialize-payment", async (req, res) => {
 
 app.post("/verifyPayment", async (req, res) => {
   const { reference } = req.body;
-  const secret = testKey;
+  const secret = process.env.PAYSTACK_LIVE_SECRET_KEY;
   try {
     const verificationResponse = await axios.get(
       `https://api.paystack.co/transaction/verify/${reference}`,
