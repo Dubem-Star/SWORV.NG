@@ -28,7 +28,7 @@ const generateReference = () => {
   return `PAY-${uuidv4()}`;
 };
 
-app.get("/homePage", (req, res) => {
+app.get("/", (req, res) => {
   res.render("home-page");
 });
 
