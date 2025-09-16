@@ -106,7 +106,7 @@ app.post("/initialize-payment", async (req, res) => {
       email,
       amount: totalAmount * 100,
       reference: transactionReference,
-      callback_url: "http://localhost:3000/paymentStatus",
+      callback_url: "http://sworv-ng.onrender.com/paymentStatus",
     };
 
     if (paymentMethod === "Bank Transfer") {
@@ -135,8 +135,11 @@ app.post("/initialize-payment", async (req, res) => {
       }
     );
 
-    const deliveryDetails = await new DeliveryDetail(userShippingDetails);
-    await deliveryDetails.save();
+    const deliveryDetails = await DeliveryDetail.findOneAndUpdate(
+      { orderId: orderId },
+      userShippingDetails,
+      { new: true, upsert: true }
+    );
 
     console.log(deliveryDetails);
 

@@ -273,7 +273,7 @@ const products = [
   {
     id: 6,
     title: " Sworv Patterned Beenie",
-    price: 40000,
+    price: 25000,
     link: "details.html",
 
     image: ["images/beeniefront.jpg", "images/Beeniecoolshot.jpg"],
@@ -283,7 +283,7 @@ const products = [
   {
     id: 7,
     title: "State of Emergency Tank Top (white)",
-    price: 30000,
+    price: 40000,
     link: "details.html",
 
     image: ["images/SOEwhitetanktop.jpeg", "images/SOEwhitetanktop.jpeg"],
@@ -294,7 +294,7 @@ const products = [
   {
     id: 8,
     title: "State of Emergency Tank Top (black)",
-    price: 30000,
+    price: 40000,
     link: "details.html",
 
     image: ["images/SOEblacktanktop.jpg", "images/SOEblacktanktop.jpg"],
@@ -343,9 +343,9 @@ function updateCartBagde() {
       bagdeCount.style.display = "flex";
       bagdeCount.textContent = totalQuantity;
     }
-    if (cartIcon) {
-      cartIcon.classList.add("adjust");
-    }
+    // if (cartIcon) {
+    //   cartIcon.classList.add("adjust");
+    // }
   } else {
     bagdeCount.style.display = "none";
   }
@@ -490,7 +490,7 @@ if (body.id === "detailsPage") {
     });
   }
 
-  // CAROUSEL CODE
+  // CAROUSEL CODE CAROUSEL CODE CAROUSEL CODE  CAROUSEL CODE
   const carouselContainer = document.querySelector(
     ".related-products-carousel"
   );
@@ -839,7 +839,7 @@ if (body.id === "checkoutPage") {
       address: form.get("address"),
       country: form.get("country"),
       city: form.get("city"),
-      apartment: form.get("apartment"),
+      state: form.get("state"),
       zipCode: form.get("zip-code"),
       phoneNo: form.get("phonenumber"),
       modeOfPayment: paymentMethod,
