@@ -47,6 +47,10 @@ nav.navbar {
   transform: translateY(-3px);
 }
 
+#iconDisplay {
+  gap: 5px;
+}
+
 .search-form {
   max-width: 150px; /* adjust this to control total width */
 }
@@ -86,7 +90,7 @@ nav.navbar {
 
 .shop-cart-icon {
   display: none;
-  font-size: 25px;
+  font-size: 23px;
   cursor: pointer;
 }
 
@@ -110,10 +114,6 @@ nav.navbar {
 
 .hamburger-icon {
   display: none;
-}
-
-#iconDisplay {
-  gap: 5px;
 }
 
 /* MAIN-CONTENT SECTION MAIN-CONTENT SECTION MAIN-CONTENT SECTION */

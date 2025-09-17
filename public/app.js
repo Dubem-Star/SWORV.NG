@@ -205,7 +205,7 @@ const products = [
   {
     id: 1,
     title: "State Of Emergency Tee (black)",
-    price: 40000,
+    price: 1000,
     link: "details.html",
 
     image: ["images/SOEteeblk.jpg", "images/SOEteeblk.jpg"],
@@ -343,11 +343,10 @@ function updateCartBagde() {
       bagdeCount.style.display = "flex";
       bagdeCount.textContent = totalQuantity;
     }
-    // if (cartIcon) {
-    //   cartIcon.classList.add("adjust");
-    // }
+    cartIcon.classList.add("adjust");
   } else {
     bagdeCount.style.display = "none";
+    cartIcon.classList.remove("adjust");
   }
 }
 
