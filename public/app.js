@@ -343,10 +343,10 @@ function updateCartBagde() {
       bagdeCount.style.display = "flex";
       bagdeCount.textContent = totalQuantity;
     }
-    cartIcon.classList.add("adjust");
+    if (cartIcon) cartIcon.classList.add("adjust");
   } else {
     bagdeCount.style.display = "none";
-    cartIcon.classList.remove("adjust");
+    if (cartIcon) cartIcon.classList.remove("adjust");
   }
 }
 
