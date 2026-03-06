@@ -37,7 +37,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: mongoStore.create({
-      mongoUrl: "mongodb://127.0.0.1:27017/authDB",
+      mongoUrl: dbUrl,
       collectionName: "sessions",
       ttl: 24 * 60 * 60,
       autoRemove: "native",
