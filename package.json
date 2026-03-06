@@ -11,6 +11,7 @@
     "mongo": "^0.1.0",
     "mongoose": "^8.18.0",
     "paystack-sdk": "^3.0.0",
+    "prettier-plugin-ejs": "^1.0.3",
     "uuid": "^11.1.0"
   },
   "scripts": {

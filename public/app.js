@@ -213,6 +213,7 @@ function updateCartBagde() {
   let cart = loadCart();
 
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  // console.log(cart);
 
   if (totalQuantity > 0) {
     const bagdeCount = document.getElementById("bagdeCount");
@@ -235,6 +236,7 @@ function updateTotalPrice(cart) {
   const totalPrice = document.getElementById("subTotal");
   const totalPriceCheckout = document.getElementById("totalPrice");
   subTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  console.log(subTotal);
 
   if (totalPrice) totalPrice.textContent = `₦${subTotal.toLocaleString()}`;
   if (totalPriceCheckout)
@@ -277,7 +279,7 @@ if (body.id === "detailsPage") {
 
   // CAROUSEL CODE CAROUSEL CODE CAROUSEL CODE  CAROUSEL CODE
   const carouselContainer = document.querySelector(
-    ".related-products-carousel"
+    ".related-products-carousel",
   );
 
   // ZOOMING CODE
@@ -306,7 +308,7 @@ if (body.id === "detailsPage") {
     let cart = loadCart();
 
     let existing = cart.find(
-      (item) => item.id === product.id && item.size === selectedSize
+      (item) => item.id === product.id && item.size === selectedSize,
     );
 
     if (existing) {
@@ -330,7 +332,8 @@ if (body.id === "detailsPage") {
     } else {
       cautionMsg.classList.remove("show");
     }
-
+    // fetchProducts API********************************
+    // fetchProducts API********************************
     const fetchProduct = await fetch("/fetch-products", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -385,7 +388,7 @@ if (body.id === "shoppingCartPage") {
         <div class="item-price-container">
           <h5 class="item-price" >₦${product.price.toLocaleString()}</h5>
           <span class="remove-btn" data-product-id = ${
-            product.id
+            product._id
           }  data-size = ${product.size} >remove</span>
         </div>
 `;
@@ -410,15 +413,16 @@ if (body.id === "shoppingCartPage") {
     for (let btn of removeBtn) {
       btn.addEventListener("click", (event) => {
         const { productId, size } = event.target.dataset;
-
+        console.log(productId);
         const itemWrapperToRemove = event.target.closest(".item-container");
         itemWrapperToRemove.remove();
 
         let cart = loadCart();
         const newCart = cart.filter(
-          (item) => !(item.id == productId && item.size == size)
+          (item) => !(item._id == productId && item.size == size),
         );
 
+        console.log(newCart);
         savetoCart(newCart);
         updateCartBagde();
         updateCartPage(newCart);
@@ -482,7 +486,7 @@ if (body.id === "checkoutPage") {
   orderId = param.get("orderId");
 
   const billingAddressCheckbox = document.getElementById(
-    "billingAddressCheckbox"
+    "billingAddressCheckbox",
   );
   const shippingAddressForm = document.getElementById("shippingAddressForm");
 
