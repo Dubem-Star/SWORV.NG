@@ -27,7 +27,7 @@ app.set("views", path.join(__dirname, "views"));
 
 const dbUrl = process.env.MONGODB_URL;
 mongoose
-  .connect(MONGODB_URL)
+  .connect(dbUrl)
   .then(() => console.log("Mongo connected"))
   .catch((e) => console.log("Error connecting Mongo:", e));
 
