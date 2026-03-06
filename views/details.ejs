@@ -20,17 +20,24 @@
     <link rel="stylesheet" href="app.css" />
   </head>
   <body id="detailsPage">
-    <div id="topAnchor"></div>
     <%- include("partials/navbar") %>
 
+    <!-- PREVIEW IMAGES PREVIEW IMAGES PREVIEW IMAGES PREVIEW IMAGES  -->
     <main class="d-container">
       <div class="detail-row">
-        <div class="mini-imgs h-100"></div>
+        <div class="mini-imgs h-100">
+          <% for(let img of product.image) {%>
+          <div class="prev-cont">
+            <img src="<%= img %>" alt="preview-image" class="swap" />
+          </div>
+          <% } %>
+        </div>
 
+        <!-- PRODUCT IMAGE  PRODUCT IMAGE   PRODUCT IMAGE  PRODUCT IMAGE  -->
         <div class="img-col">
           <div class="zoom-col" id="zoomCont">
             <img
-              src=""
+              src="<%= product.image[0] %>"
               class="product-img image-fluid"
               id="productImg"
               alt="product"
@@ -39,8 +46,12 @@
         </div>
 
         <div class="card description-col">
-          <h4 class="detail-card-title" id="productName"></h4>
-          <p class="card-text lead info" id="productDescription"></p>
+          <h4 class="detail-card-title" id="productName">
+            <%= product.title %>
+          </h4>
+          <p class="card-text lead info" id="productDescription">
+            <%= product.description %>
+          </p>
 
           <div class="product-size-container" id="productSizeBox">
             <div class="size-input-wrapper">
@@ -70,7 +81,10 @@
             >
           </div>
 
-          <span class="card-text price-text" id="productPrice"></span> <br />
+          <span class="card-text price-text" id="productPrice">
+            ₦<%= product.price.toLocaleString() %></span
+          >
+          <br />
           <button class="btn btn-primary atc-btn" id="atcBtn">
             Add to cart
           </button>
@@ -86,7 +100,20 @@
         <div class="scroll">
           <i class="bi bi-chevron-left arrow"></i>
         </div>
-        <div class="related-products-carousel"></div>
+        <div class="related-products-carousel">
+          <% for(let item of products){ %>
+          <a href="/details?id=<%= item._id %>">
+            <div class="carousel-product-card">
+              <img
+                src="<%= item.image[0] %>"
+                alt="carousel-img"
+                class="carousel-img"
+              />
+            </div>
+          </a>
+
+          <% } %>
+        </div>
         <div class="scroll">
           <i class="bi bi-chevron-right arrow"></i>
         </div>

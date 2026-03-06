@@ -201,129 +201,6 @@ const countryStateData = {
   ],
 };
 
-const products = [
-  {
-    id: 1,
-    title: "State Of Emergency Tee (black)",
-    price: 1000,
-    link: "details.html",
-
-    image: ["images/SOEteeblk.jpg", "images/SOEteeblk.jpg"],
-    description:
-      "Nollywood-themed boxy T-shirt. The Unisex Essential Cotton T-shirt is made from soft, 100% combed cotton for a breathable, heavyweight feel that's perfect for everyday wear. With a classic crew neckline and a boxy fit, this shirt is designed to look good on everyone and pair effortlessly with your favorite jeans, joggers, or shorts.",
-  },
-
-  {
-    id: 2,
-    title: "State Of Emergency Tee (white)",
-    price: 40000,
-    link: "details.html",
-
-    image: ["images/SOEteeyt.png", "images/SOEteeyt.png"],
-    description:
-      "Nollywood-themed boxy T-shirt. The Unisex Essential Cotton T-shirt is made from soft, 100% combed cotton for a breathable, heavyweight feel that's perfect for everyday wear. With a classic crew neckline and a boxy fit, this shirt is designed to look good on everyone and pair effortlessly with your favorite jeans, joggers, or shorts.",
-  },
-
-  {
-    id: 3,
-    title: "Adire Star Full Piece",
-    price: 50000,
-    link: "details.html",
-
-    image: [
-      "images/Adiretop.jpg",
-      "images/Adirebottom.jpg",
-      "images/Adireshot1.jpg",
-      "images/Adireshot2.jpg",
-    ],
-    description:
-      "African textile adire set. This Unisex Set is made with 100% lanin, portraying the richness in African Fashion.",
-  },
-  {
-    id: 4,
-    title: "Adire Checkers Red Piece",
-    price: 50000,
-    link: "details.html",
-
-    image: [
-      "images/adirecolortop.jpg",
-      "images/adirecolorshort.jpg",
-      "images/adireColoredSingle.jpg",
-      "images/adireclrdsingle2.jpg",
-    ],
-    description:
-      "African textile adire set. This Unisex Set is made with 100% lanin, portraying the richness in African Fashion.",
-  },
-
-  {
-    id: 5,
-    title: "Adire Checkers Blue Piece",
-    price: 40000,
-    link: "details.html",
-
-    image: [
-      "images/AdireBlue1.jpg",
-      "images/AdireBlue2.jpg",
-      "images/adirefull1.jpg",
-    ],
-    description:
-      "African textile adire set. This Unisex Set is made with 100% lanin, portraying the richness in African Fashion.",
-  },
-
-  {
-    id: 6,
-    title: " Sworv Patterned Beenie",
-    price: 25000,
-    link: "details.html",
-
-    image: ["images/beeniefront.jpg", "images/Beeniecoolshot.jpg"],
-    description:
-      "Stay cozy and stylish with this multicolor wool knit beanie from SWORV Studios. Crafted with a blend of deep red, black, and white tones, this beanie adds a bold yet versatile touch to your look. Soft, warm, and lightweight, it’s perfect for cold days, casual outings, or elevating your streetwear fit. Finished with the signature SWORV logo patch for that unique edge, this beanie is more than just an accessory—it’s a statement",
-  },
-  {
-    id: 7,
-    title: "State of Emergency Tank Top (white)",
-    price: 40000,
-    link: "details.html",
-
-    image: ["images/SOEwhitetanktop.jpeg", "images/SOEwhitetanktop.jpeg"],
-    description:
-      "Monochrome elegance meets rebel energy. This sharp-fit, jet-black top uses contrast piping and precision cuts to echo high fashion. Designed with double side zippers and flat lapel, it's engineered to elevate even the most laid-back look. The kind of piece that doesn’t need loud colors to command the room",
-  },
-
-  {
-    id: 8,
-    title: "State of Emergency Tank Top (black)",
-    price: 40000,
-    link: "details.html",
-
-    image: ["images/SOEblacktanktop.jpg", "images/SOEblacktanktop.jpg"],
-    description:
-      "Monochrome elegance meets rebel energy. This sharp-fit, jet-black top uses contrast piping and precision cuts to echo high fashion. Designed with double side zippers and flat lapel, it's engineered to elevate even the most laid-back look. The kind of piece that doesn’t need loud colors to command the room",
-  },
-
-  {
-    id: 9,
-    title: "Athletic Department Tee",
-    price: 45000,
-    link: "details.html",
-
-    image: ["images/athleticsDept1.jpg", "images/athleticsDept1.jpg"],
-    description:
-      "Our Athletic department jersey is a boxy shaped jersey with a sport like look. Light weight tee with a silicon 3D print This shirt is designed to look colorful and good on everyone and pair effortlessly with your favorite jeans, joggers or shorts.",
-  },
-  {
-    id: 10,
-    title: "Explosion Tee",
-    price: 40000,
-    link: "details.html",
-
-    image: ["images/explosionTee1.jpg", "images/explosionTee1.jpg"],
-    description:
-      "Dooms day inspired boxy polo tee. Lightweight feet that's perfect for everyday wear. With a classic collar neckline with zip. This shirt is designed to look good on everyone and pair effortlessly with your favorite jeans, joggers, or shorts.",
-  },
-];
-
 function loadCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
@@ -368,44 +245,6 @@ function updateTotalPrice(cart) {
 //   HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE
 if (body.id === "homePage") {
   bodyId = "homePage";
-
-  const dynamicImg = document.querySelector(".dynamic-img");
-
-  let images = [
-    "images/adireColoredSingle.jpg",
-    "images/SOEfullpackagestanding1.jpg",
-    "images/adirefull2.jpg",
-    "images/SOEblkteehauppose.jpg",
-    "images/Adireshot2.jpg",
-    "images/Beeniecoolshot.jpg",
-    "images/blackSOEtee.jpg",
-    "images/Adirex2cbn.1.jpg",
-    "images/SOEfullpackage1.jpg",
-    "images/SOEytgirlpose.jpg",
-    "images/adirefull3.jpg",
-    "images/SOEfullpackagestanding5.jpg",
-    "images/SOEfullpackagestanding3.jpg",
-    "images/adirefullsitin1.jpg",
-    "images/SOEfullpackage2.jpg",
-  ];
-
-  for (let src of images) {
-    const img = new Image();
-    img.src = src;
-  }
-
-  let index = 0;
-  setInterval(() => {
-    dynamicImg.style.opacity = "0";
-    setTimeout(() => {
-      dynamicImg.onload = () => {
-        dynamicImg.style.opacity = "1";
-      };
-      dynamicImg.src = images[index];
-
-      index = (index + 1) % images.length;
-    }, 100);
-  }, 10000);
 }
 
 //   SHOP PAGE SHOP PAGE SHOP PAGE SHOP PAGE SHOP PAGE SHOP PAGE SHOP PAGE
@@ -413,31 +252,6 @@ if (body.id === "homePage") {
 
 if (body.id === "shopPage") {
   bodyId = "shopPage";
-  for (let product of products) {
-    const col = document.createElement("div");
-    col.classList.add("custom-col");
-
-    col.innerHTML = ` 
-  <div class="card card-body  ">
-     <a href = "/details?id=${
-       product.id
-     }" class="text-decoration-none  card-body img-wrapper" id="detailsImg">
-     <img src="${product.image[0]}" class="card-imgs img-front"  alt="piece${
-      product.id
-    }"/>
-<img src="${product.image[1]}" class="card-imgs img-back"  alt="piece${
-      product.id
-    }"/>
-     </a>
-     <div class="card-body  text-card">
-      <h6 class="card-title mb-1">${product.title}</h5>
-            <p id="product-price" class ="card-text">₦${product.price.toLocaleString()}</p>
-          </div>
-          </div>
-    `;
-
-    productGrid.appendChild(col);
-  }
 }
 
 //   DETAILS PAGE DETAILS PAGE DETAILS PAGE DETAILS PAGE DETAILS PAGE DETAILS PAGE
@@ -445,37 +259,9 @@ if (body.id === "shopPage") {
 
 if (body.id === "detailsPage") {
   bodyId = "detailsPage";
+
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
-
-  if (!productId) {
-    window.location.href = "index.html";
-  }
-
-  const product = products.find((p) => p.id == productId);
-  const miniImgsContainer = document.querySelector(".mini-imgs");
-  if (!product) {
-    document.body.innerHTML = "<h1> PRODUCT NOT FOUND</h1>";
-  } else {
-    //  ASSIGN RESPECTIVE PRODUCTS
-    for (let img of product.image) {
-      const miniImg = document.createElement("img");
-      miniImg.classList.add("swap");
-      miniImg.src = img;
-      miniImg.alt = `productId ${product.id} mini imgs`;
-
-      const previewContainer = document.createElement("div");
-      previewContainer.classList.add("prev-cont");
-
-      previewContainer.appendChild(miniImg);
-      miniImgsContainer.appendChild(previewContainer);
-    }
-    productImg.src = product.image[0];
-    productName.textContent = product.title;
-    productDescription.textContent = product.description;
-
-    productPrice.textContent = `₦${product.price.toLocaleString()}`;
-  }
 
   //   SWAP IMAGES CODE
   const swap = document.querySelectorAll(".swap");
@@ -493,22 +279,6 @@ if (body.id === "detailsPage") {
   const carouselContainer = document.querySelector(
     ".related-products-carousel"
   );
-
-  for (let product of products) {
-    const productCard = document.createElement("div");
-    productCard.classList.add("carousel-product-card");
-
-    const productImg = document.createElement("img");
-    productImg.classList.add("carousel-img");
-    productImg.src = product.image[0];
-
-    productCard.appendChild(productImg);
-    carouselContainer.appendChild(productCard);
-
-    productCard.addEventListener("click", () => {
-      window.location.href = `/details?id=${product.id}`;
-    });
-  }
 
   // ZOOMING CODE
   imgWrapper.addEventListener("mousemove", (e) => {
@@ -552,7 +322,7 @@ if (body.id === "detailsPage") {
     console.log("Cart updated:", cart);
   }
 
-  atcBtn.addEventListener("click", () => {
+  atcBtn.addEventListener("click", async () => {
     selectedSize = productSize.value;
     const cautionMsg = document.getElementById("cautionMsg");
     if (!selectedSize) {
@@ -560,7 +330,21 @@ if (body.id === "detailsPage") {
     } else {
       cautionMsg.classList.remove("show");
     }
-    addtoCart(product);
+
+    const fetchProduct = await fetch("/fetch-products", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ productId }),
+    });
+
+    const response = await fetchProduct.json();
+
+    if (response.status) {
+      addtoCart(response.product);
+    } else {
+      alert(response.message);
+    }
+
     atcBtn.textContent = "Added to Cart!";
 
     setTimeout(() => {

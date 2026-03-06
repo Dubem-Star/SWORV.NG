@@ -26,7 +26,36 @@
     <%- include("partials/navbar") %>
 
     <div class="container">
-      <div id="productGrid" class="product-container"></div>
+      <div id="productGrid" class="product-container">
+        <% for(let item of products){ %>
+        <div class="custom-col">
+          <div class="card card-body">
+            <a
+              href="/details?id=<%= item._id %> "
+              class="text-decoration-none card-body img-wrapper"
+              id="detailsImg"
+            >
+              <img
+                src="<%= item.image[0] %>"
+                class="card-imgs img-front"
+                alt="product-image"
+              />
+              <img
+                src="<%= item.image[1] %>"
+                class="card-imgs img-back"
+                alt="product-image"
+              />
+            </a>
+            <div class="card-body text-card">
+              <h5 class="card-title mb-1"><%= item.title %></h5>
+              <p id="product-price" class="card-text">
+                ₦<%= item.price.toLocaleString() %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
     </div>
 
     <%- include("partials/footer") %>

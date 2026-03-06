@@ -3,17 +3,17 @@
 }
 
 .navbar {
-  background-color: rgb(244, 248, 248) !important;
-  color: rgb(17, 17, 41);
+  /* background-color: rgb(244, 248, 248) !important; */
+  color: rgb(248, 248, 251);
 }
 
 .nav-link {
-  color: rgb(17, 17, 41) !important;
+  /* color: rgb(17, 17, 41) !important; */
 }
 
 .nav-link.active {
-  color: rgb(17, 17, 41) !important;
-  border-bottom: 2px solid rgb(17, 17, 41);
+  /* color: rgb(17, 17, 41) !important; */
+  border-bottom: 2px solid rgb(248, 248, 251);
   transform: translateY(-3px);
 }
 
@@ -22,7 +22,7 @@
 }
 
 .shop-cart-icon {
-  color: rgb(17, 17, 41) !important;
+  /* color: rgb(17, 17, 41) !important; */
 }
 
 .search-input {
@@ -289,7 +289,9 @@ html,
   flex-direction: column;
   gap: 20px;
   margin-top: 30px;
-  transition: opacity 0.3s ease, max-height 0.4s ease;
+  transition:
+    opacity 0.3s ease,
+    max-height 0.4s ease;
 }
 
 .billing-address-form.hidden {
@@ -341,7 +343,9 @@ html,
   gap: 20px;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.3s ease, max-height 0.4s ease;
+  transition:
+    opacity 0.3s ease,
+    max-height 0.4s ease;
 }
 
 .description-container.hidden {
