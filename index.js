@@ -27,7 +27,7 @@ app.set("views", path.join(__dirname, "views"));
 
 const dbUrl = process.env.MONGODB_URL;
 mongoose
-  .connect("mongodb://127.0.0.1:27017/testDB")
+  .connect(MONGODB_URL)
   .then(() => console.log("Mongo connected"))
   .catch((e) => console.log("Error connecting Mongo:", e));
 
@@ -45,7 +45,7 @@ app.use(
     cookie: {
       maxAge: 1000 * 60 * 60 * 24,
     },
-  })
+  }),
 );
 
 function checkAuth(req, res, next) {
@@ -229,7 +229,7 @@ app.post("/create-order", async (req, res) => {
   const cart = req.body;
   const amount = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0
+    0,
   );
 
   try {
@@ -289,7 +289,7 @@ app.post("/initialize-payment", async (req, res) => {
           Authorization: `Bearer ${process.env.PAYSTACK_LIVE_SECRET_KEY}`,
           "Content-Type": "application/json",
         },
-      }
+      },
     );
     if (response.data) {
       console.log(response.data);
@@ -300,13 +300,13 @@ app.post("/initialize-payment", async (req, res) => {
       {
         paystackRef: transactionReference,
         orderOwner: `${firstName} ${lastName}`,
-      }
+      },
     );
 
     const deliveryDetails = await DeliveryDetail.findOneAndUpdate(
       { orderId: orderId },
       userShippingDetails,
-      { new: true, upsert: true }
+      { new: true, upsert: true },
     );
 
     console.log(deliveryDetails);
@@ -333,7 +333,7 @@ app.post("/verifyPayment", async (req, res) => {
         headers: {
           Authorization: `Bearer ${secret}`,
         },
-      }
+      },
     );
 
     const transactionData = await verificationResponse.data.data;
@@ -341,11 +341,11 @@ app.post("/verifyPayment", async (req, res) => {
     if (transactionData.status === "success") {
       await Order.findOneAndUpdate(
         { paystackRef: reference },
-        { status: "paid" }
+        { status: "paid" },
       );
       res.json({ status: true, message: "transaction successfull" });
       console.log(
-        `payment successfull, Order ${reference} has been updated to "paid"`
+        `payment successfull, Order ${reference} has been updated to "paid"`,
       );
     } else {
       console.log("payment unsuccessfull");
@@ -361,7 +361,7 @@ app.post("/edit-product-name", async (req, res) => {
   const { productName, newName } = req.body;
   const product = await Product.findOneAndUpdate(
     { title: productName },
-    { title: newName }
+    { title: newName },
   );
   if (!product) {
     return res
@@ -377,7 +377,7 @@ app.post("/edit-product-price", async (req, res) => {
 
   const product = await Product.findOneAndUpdate(
     { title: productName },
-    { price: updatedPrice }
+    { price: updatedPrice },
   );
 
   if (!product) {
