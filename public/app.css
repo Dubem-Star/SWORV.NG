@@ -1,3 +1,14 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 body {
   position: relative;
 }
@@ -349,7 +360,9 @@ nav.navbar {
   opacity: 0;
   max-height: 0;
   color: red;
-  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+  transition:
+    opacity 0.3s ease-in-out,
+    max-height 0.3s ease-in-out;
 }
 
 .caution-message.show {
@@ -655,7 +668,9 @@ MEDIA QUERIES*** */
     opacity: 1;
     max-height: 250px;
     z-index: 1000;
-    transition: opacity 0.4s ease, max-height 0.3s ease-in-out;
+    transition:
+      opacity 0.4s ease,
+      max-height 0.3s ease-in-out;
   }
 
   .nav-ul {
