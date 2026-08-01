@@ -3,62 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
+    <title>Shop | SWORV Studios</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-
     <link
       href="https://res.cloudinary.com/dirijnb2k/image/upload/sworv-logo.png"
       type="image/png"
       rel="icon"
     />
-
     <link rel="stylesheet" href="app.css" />
   </head>
   <body id="shopPage">
-    <div id="topAnchor"></div>
-
     <%- include("partials/navbar") %>
 
-    <div class="container">
-      <div id="productGrid" class="product-container">
-        <% for(let item of products){ %>
-        <div class="custom-col">
-          <div class="card card-body">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-uppercase tracking-wider">Catalog</h2>
+        <p class="text-secondary">Available Stock & Custom Pieces</p>
+      </div>
+
+      <div class="container products-container">
+        <div class="row g-4" id="productGrid">
+          <% products.forEach(product => { %>
+          <div class="col-6 col-md-4 col-lg-3">
             <a
-              href="/details?id=<%= item._id %>"
-              class="text-decoration-none card-body img-wrapper"
-              id="detailsImg"
+              href="/details?id=<%= product._id %>"
+              class="text-decoration-none"
             >
-              <img
-                src="<%= item.image[0] %>"
-                class="card-imgs img-front"
-                alt="product-image"
-              />
-              <img
-                src="<%= item.image[1] %>"
-                class="card-imgs img-back"
-                alt="product-image"
-              />
+              <div class="product-card">
+                <!-- Image & Swap Wrap -->
+                <div class="product-img-wrap">
+                  <% if (product.isSoldOut) { %>
+                  <div class="sold-out-badge">Sold Out</div>
+                  <% } %>
+
+                  <!-- Front Image -->
+                  <img
+                    src="<%= product.image[0] %>"
+                    alt="<%= product.title %>"
+                    class="card-imgs img-front"
+                  />
+
+                  <!-- Back Image (Checks if index 1 is available, otherwise reuses front) -->
+                  <% if (product.image && product.image[1]) { %>
+                  <img
+                    src="<%= product.image[1] %>"
+                    alt="<%= product.title %> - Back View"
+                    class="card-imgs img-back"
+                  />
+                  <% } %>
+
+                  <!-- Quick Add Overlay -->
+                  <div class="quick-add">
+                    <i class="bi bi-plus me-1"></i>Quick Add
+                  </div>
+                </div>
+
+                <!-- Title & Price on Top / Bottom -->
+                <div class="product-header-top">
+                  <div class="product-name-top"><%= product.title %></div>
+                  <div class="product-price-top">
+                    ₦<%= product.price.toLocaleString() %>
+                  </div>
+                </div>
+              </div>
             </a>
-            <div class="card-body text-card">
-              <h5 class="card-title mb-1"><%= item.title %></h5>
-              <p id="product-price" class="card-text">
-                ₦<%= item.price.toLocaleString() %>
-              </p>
-            </div>
           </div>
+          <% }) %>
         </div>
-        <% } %>
       </div>
     </div>
 
@@ -66,7 +85,6 @@
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
     <script src="include.js" defer></script>

@@ -3,19 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-
+    <title>SWORV Studios | Home</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-
     <link
       href="https://res.cloudinary.com/dirijnb2k/image/upload/sworv-logo.png"
       type="image/png"
@@ -23,47 +20,111 @@
     />
     <link rel="stylesheet" href="app.css" />
   </head>
-  <link rel="stylesheet" href="homePage-coPage.css" />
-  <body class="home-page" id="homePage">
-    <!-- <div id="navbarPlaceholder"></div> -->
+  <body class="home-page position-relative" id="homePage">
     <%- include("partials/navbar") %>
+
+    <!-- <div class="home-img vw-100 vh-100 inset-0 position-absolute">
+      <img
+        class="w-100 h-100"
+        src="https://images.pixieset.com/731378711/6cb1fafe71c78594a88a0812fa419217-xlarge.jpg"
+        alt=""
+      />
+    </div>
+    <div class="home-overlay vw-100 vh-100"></div> -->
+
     <div class="home-img-container">
-      <!-- <img src="https://res.cloudinary.com/dirijnb2k/image/upload/SOEfullpackage1.jpg" class="dynamic-img" alt="" /> -->
-      <video
-        src="https://res.cloudinary.com/dirijnb2k/video/upload/SworvVideo1.mp4"
-        autoplay
-        muted
-        loop
-        playsinline
-        controls
-        class="homepage-video-cover"
-      ></video>
+      <img
+        src="https://images.pixieset.com/731378711/6cb1fafe71c78594a88a0812fa419217-xlarge.jpg"
+        alt=""
+        class="home-img"
+      />
+      <div class="home-overlay">
+        <div class="cover-detail">
+          <h1 class="cover-collection-name">SWORV</h1>
+          <div class="cover-arrow">
+            <button
+              id="viewShopBtn"
+              class="collection-cover__scroll-button js-scroll-past-cover button-reset"
+            >
+              View Shop
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="header-wrapper">
-      <header class="text-center bg-light py-5 mt-4 home-page-header-container">
-        <div class="container custom-cont">
-          <div class="logo-and-heading-cont">
-            <img
-              src="https://res.cloudinary.com/dirijnb2k/image/upload/sworv-logo.png"
-              alt=""
-              class="header-logo"
-            />
-            <h1 class="display-5 fw-bold mb-3">
-              WHY FIT IN? WHEN YOU CAN BE CUSTOM MADE
-            </h1>
-          </div>
-
-          <p class="lead mb-4">Trendy. Comfortable. Affordable</p>
-          <a href="/shopPage" class="btn btn-dark px-4 py-2 shop-now-btn"
-            >Shop Now</a
+    <!-- Hero Section (No Video, High-End Streetwear Typography & Layout) -->
+    <!-- <section class="home-hero text-center">
+      <div class="container">
+        <div class="mb-4">
+          <img
+            src="https://res.cloudinary.com/dirijnb2k/image/upload/sworv-logo.png"
+            alt="SWORV Logo"
+            class="header-logo mb-4"
+          />
+          <h1
+            class="display-4 fw-bold text-uppercase tracking-wider mb-3"
+            style="letter-spacing: 2px"
+          >
+            WHY FIT IN? WHEN YOU CAN BE CUSTOM MADE
+          </h1>
+          <p class="text-secondary fs-5 mb-4" style="letter-spacing: 1px">
+            Trendy. Comfortable. Affordable
+          </p>
+        </div>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/shopPage" class="btn btn-silver px-5 py-3 text-uppercase"
+            >Explore Drop</a
           >
         </div>
-      </header>
-    </div>
+      </div>
+    </section> -->
 
-    <!-- <div id="footerPlaceholder"></div> -->
+    <!-- Lookbook / Editorial Grid Teaser -->
+    <!-- <section class="container py-5 my-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-uppercase" style="letter-spacing: 1px">
+          The Lookbook
+        </h2>
+        <p class="text-secondary">
+          Custom-made aesthetics engineered for the culture.
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div
+            class="position-relative overflow-hidden border border-secondary"
+            style="aspect-ratio: 4/5; background: #141414"
+          >
+            <img
+              src="https://res.cloudinary.com/dirijnb2k/image/upload/SOEfullpackage1.jpg"
+              alt="Lookbook 1"
+              class="w-100 h-100 object-fit-cover opacity-75 hover-zoom"
+              style="transition: 0.4s"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="position-relative overflow-hidden border border-secondary"
+            style="aspect-ratio: 4/5; background: #141414"
+          >
+            <img
+              src="https://res.cloudinary.com/dirijnb2k/image/upload/sworv-logo.png"
+              alt="Lookbook 2"
+              class="w-100 h-100 object-fit-contain p-5 opacity-75"
+            />
+          </div>
+        </div>
+      </div>
+    </section> -->
+
     <%- include("partials/footer") %>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="include.js" defer></script>
     <script src="app.js" defer></script>
   </body>

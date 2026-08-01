@@ -11,11 +11,11 @@ mongoose
 
     const products = [
       {
-        title: "State Of Emergency Tee (black)",
-        price: 1000,
+        title: "Studio Camo top",
+        price: 60000,
         image: [
-          "https://res.cloudinary.com/dirijnb2k/image/upload/SOEteeblk.jpg",
-          "https://res.cloudinary.com/dirijnb2k/image/upload/SOEteeblk.jpg",
+          "https://res.cloudinary.com/dirijnb2k/image/upload/sworv_camo_1.jpg",
+          "https://res.cloudinary.com/dirijnb2k/image/upload/sworv_camo_2.jpg",
         ],
         description:
           "Nollywood-themed boxy T-shirt. The Unisex Essential Cotton T-shirt is made from soft, 100% combed cotton for a breathable, heavyweight feel that's perfect for everyday wear. With a classic crew neckline and a boxy fit, this shirt is designed to look good on everyone and pair effortlessly with your favorite jeans, joggers, or shorts.",
@@ -24,11 +24,11 @@ mongoose
       },
 
       {
-        title: "State Of Emergency Tee (white)",
-        price: 40000,
+        title: "Sworv Goat Tee",
+        price: 45000,
         image: [
-          "https://res.cloudinary.com/dirijnb2k/image/upload/SOEteeyt.png",
-          "https://res.cloudinary.com/dirijnb2k/image/upload/SOEteeyt.png",
+          "https://res.cloudinary.com/dirijnb2k/image/upload/sworv_goat_1.jpg",
+          "https://res.cloudinary.com/dirijnb2k/image/upload/sworv_goat_2.jpg",
         ],
         description:
           "Nollywood-themed boxy T-shirt. The Unisex Essential Cotton T-shirt is made from soft, 100% combed cotton for a breathable, heavyweight feel that's perfect for everyday wear. With a classic crew neckline and a boxy fit, this shirt is designed to look good on everyone and pair effortlessly with your favorite jeans, joggers, or shorts.",

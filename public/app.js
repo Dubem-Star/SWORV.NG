@@ -246,6 +246,9 @@ function updateTotalPrice(cart) {
 //   HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE
 //   HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE
 if (body.id === "homePage") {
+  document.getElementById("viewShopBtn").addEventListener("click", () => {
+    window.location.href = "http://localhost:3000/shopPage";
+  });
   bodyId = "homePage";
 }
 

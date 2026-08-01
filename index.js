@@ -20,7 +20,7 @@ const crypto = require("crypto");
 require("dotenv").config();
 const bcrypt = require("bcrypt");
 const mongoStore = require("connect-mongo");
-const paystack = new Paystack(process.env.PAYSTACK_LIVE_SECRET_KEY);
+// const paystack = new Paystack(process.env.PAYSTACK_LIVE_SECRET_KEY);
 let name;
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -274,7 +274,7 @@ app.post("/initialize-payment", async (req, res) => {
       email,
       amount: totalAmount * 100,
       reference: transactionReference,
-      callback_url: "http://sworv-ng.onrender.com/paymentStatus",
+      callback_url: "https://sworv-ng.vercel.app/paymentStatus",
     };
 
     if (paymentMethod === "Bank Transfer") {

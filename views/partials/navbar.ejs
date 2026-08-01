@@ -1,18 +1,18 @@
 <nav
-  class="navbar bg-dark navbar-expand-lg d-flex align-items-center justify-content-between px-3 py-2"
+  class="navbar bg-dark navbar-expand-lg d-flex align-items-center justify-content-between px-4 py-2"
 >
   <div class="navbar-brand d-flex align-items-center">
     <a href="/">
       <img
         src="https://res.cloudinary.com/dirijnb2k/image/upload/sworv-logo.png"
-        alt="logo"
+        alt="SWORV Logo"
         class="logo-img"
       />
     </a>
   </div>
 
   <div class="div-nav" id="navbarContent">
-    <ul class="navbar-nav nav-ul">
+    <ul class="navbar-nav nav-ul mb-0">
       <li class="nav-item">
         <a href="/" id="homePage" class="fw-bold nav-link">Home</a>
       </li>
@@ -28,29 +28,18 @@
   </div>
 
   <div id="iconDisplay" class="d-flex align-items-center">
-    <!-- <form action="#" class="d-flex" role="search">
-      <input
-        id="searchInput"
-        type="text"
-        class="me-2 bg-dark search-input"
-        placeholder="Search..."
-      />
-    </form>
-
-    <i id="searchIcon" class="bi bi-search search-icon"></i> -->
-
-    <div class="cart-icon" id="cartIcon">
-      <a href="/cart" class="text-decoration-none">
+    <div class="cart-icon adjust" id="cartIcon">
+      <a href="/cart" class="text-decoration-none" aria-label="Shopping Cart">
         <i
-          class="bi bi-cart shop-cart-icon text-light d-flex align-items-center"
+          class="bi bi-bag shop-cart-icon text-light d-flex align-items-center fs-5"
         ></i>
       </a>
-
       <span class="bagde" id="bagdeCount">0</span>
     </div>
 
-    <i class="bi bi-list hamburger-icon"></i>
+    <i
+      class="bi bi-list hamburger-icon fs-4 ms-3"
+      aria-label="Toggle Navigation"
+    ></i>
   </div>
 </nav>
-
-<script src="include.js" defer></script>
