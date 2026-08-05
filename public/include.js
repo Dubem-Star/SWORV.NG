@@ -26,13 +26,16 @@ function setupEventListeners() {
     });
   }
 
-  const hamburgerBtn = document.querySelector(".hamburger-icon");
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
   const navbarContent = document.getElementById("navbarContent");
 
   if (hamburgerBtn && navbarContent) {
-    hamburgerBtn.addEventListener("click", () => {
-      navbarContent.classList.toggle("display");
-    });
+    if (!hamburgerBtn.dataset.bound) {
+      hamburgerBtn.addEventListener("click", () => {
+        navbarContent.classList.toggle("display");
+      });
+      hamburgerBtn.dataset.bound = "true";
+    }
   }
 }
 
