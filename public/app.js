@@ -246,9 +246,9 @@ function updateTotalPrice(cart) {
 //   HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE
 //   HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE HOME PAGE
 if (body.id === "homePage") {
-  document.getElementById("viewShopBtn").addEventListener("click", () => {
-    window.location.href = "https://sworv-ng.vercel.app/shopPage";
-  });
+  // document.getElementById("viewShopBtn").addEventListener("click", () => {
+  //   window.location.href = "https://sworv-ng.vercel.app/shopPage";
+  // });
   bodyId = "homePage";
 }
 
@@ -376,7 +376,7 @@ if (body.id === "shoppingCartPage") {
 
       itemContainer.innerHTML = `
 <div class="item-quantity-container" >
-          <div class="item-quantity" >x${product.quantity}</div>
+          <div class="item-quantity text-black" >x${product.quantity}</div>
         </div>
 
         <div class="item-image-container">
@@ -442,7 +442,7 @@ if (body.id === "shoppingCartPage") {
 
   checkoutBtn.addEventListener("click", async () => {
     let cart = loadCart();
-
+    console.log(cart);
     try {
       const res = await fetch("/create-order", {
         method: "post",
